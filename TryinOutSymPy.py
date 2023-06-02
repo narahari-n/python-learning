@@ -2,8 +2,12 @@ import sympy as sym
 import os #For clearing the terminal (or console) screen everytime by calling os.system('cls')
 from sympy import *
 
-a = sym.Rational(1, 2)
 os.system('cls')    #This is equivalent to clrscr() in c or clc in MATLAB.
+
+x = sym.Symbol('x')
+y = sym.Symbol('y')
+
+sym.init_printing()
 
 """
 # Using sympy as a calculator
@@ -35,11 +39,10 @@ print(num1+num2)
 =============================================================
 """
 
+""" 
 # Symbols - Algebraic manipulations
 
 sym.init_printing(use_unicode=False, wrap_line=True)
-x = sym.Symbol('x')
-y = sym.Symbol('y')
 #z = x+y+x-y
 #z = sym.expand((x+y)**2)
 #z = sym.expand(x + y, complex=True)
@@ -54,3 +57,19 @@ y = sym.Symbol('y')
 
 print(sym.expand((x+y)**6))
 print(sym.simplify((sin(x)/cos(x)),trig=True))
+"""
+
+"""
+=============================================================
+"""
+
+# Calculus - Limits, Differentiation, Integration
+""" 
+print(sym.limit(sym.sin(x) / x, x, 0))
+print(sym.limit(x, x, sym.oo))
+print(sym.limit(1 / x, x, sym.oo))
+print(sym.limit(x ** x, x, 0))
+print(sym.diff(sym.sin(2 * x), x, 3))
+print(sym.integrate(sym.log(x), x))
+print(sym.integrate(sym.exp(-x ** 2) * sym.erf(x), x))
+ """
